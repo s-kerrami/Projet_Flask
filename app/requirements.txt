@@ -1,0 +1,20 @@
+# Framework 
+
+Flask==3.0.3
+
+
+# Formulaire
+
+Flask-WTF==1.2.1
+email_validator==2.1.1
+
+#ORM pour la DB
+
+
+sqlalchemy==2.0.30
+flask_sqlalchemy==3.1.1
+psycopg2==2.9.9
+
+# Authentication
+
+Flask-login==0.6.3

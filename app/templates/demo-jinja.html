@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+
+{% block title %} Démonstration - Jinja{% endblock %}
+
+{% block content %}
+<!-- Variables : -->
+{% set nom = 'Salah'%}
+<h1>Ma page d'index !!!</h1>
+<h2>{{test}}</h2>
+<h2>{{nom|upper}}</h2>
+{#  Mon commentaire de test qui ne dois pas être visible dans le navigateur !!!  #}
+
+<!-- Conditions : -->
+{% set age = 5%}
+{% if age >= 18%}
+    <p>Vous êtes majeur ✔<p>
+{% else %}
+    <p>vous êtes mineur ⛔<p>
+{% endif %}
+
+<!-- Boucles -->
+    {% set compteur = 0 %}
+    {% set  liste_etudiant = {
+        'John' : 'Présent',
+        'Rambo' : 'Absent',
+        'Chuck' : 'Présent/Absent'
+    } %}
+
+    <h3>Boucle avec un for :</h3>
+    <ul>
+        {% for etudiant in liste_etudiant %}
+            <li>{{etudiant}}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

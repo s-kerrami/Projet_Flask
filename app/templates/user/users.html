@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block title %} Utilisateurs {% endblock %}
+
+
+
+{% block content %}
+
+<h1>Utilisateurs :</h1>
+
+<ul>
+    {% for user in users %}
+    <li>{{user.username}} <a href="{{url_for('updateUser', id=user.id)}}">Update</a> </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

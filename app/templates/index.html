@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <title>{% block title %}Index{% endblock %}</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="dropdown">
+            <button class="dropbtn">Authentification</button>
+            {% if current_user.is_authenticated %}
+            <i class="fa fa-caret-down"></i>
+            <div class="dropdown-content">
+                <a href="/auth/logout">Déconnexion</a>
+            </div>
+            {% else %}
+            <i class="fa fa-caret-down"></i>
+            <div class="dropdown-content">
+                <a href="/auth/register">Inscription</a>
+                <a href="/auth/login">Connexion</a>
+            </div>
+            {% endif %}
+        </div>
+    
+        <div class="dropdown">
+            <a href="/demo/jinja">Démonstrations Jinja</a>
+        </div>
+    </nav>
+
+    {% block content %} 
+        <img src="{{ url_for('static', filename='image/musique.jpg') }}" alt="image de music">
+    {% endblock %}
+
+
+    <footer class="footer">
+        <p>&copy; 2024 Votre Site. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
